@@ -20,6 +20,38 @@ public class Homework07 {
                 "\nGreatest number is = " + Math.max(Math.max(Math.max(n1, n2), n3), n4) +
                 "\nSmallest number is = " + Math.min(Math.min(Math.min(n1, n2), n3), n4)
         );
+        System.out.println("\n---------TASK-1 April-15 2.5 months in--------\n");
+        /*
+        Write a program that generates 4 random numbers between 0 and 10 (0 and 10 are also included).
+        -Store numbers in proper variables and print them first
+        -Print each number’s absolute difference with 5
+        -Find greatest and print the result with a proper message
+        -Find smallest and print the result with a proper message
+        NOTE: Assume random numbers came as 2, 5, 3, 0 respectively.
+
+        EXPECTED RESULT:
+        Number 1 = 2
+        Number 2 = 5
+        Number 3 = 3
+        Number 4 = 0
+        Absolute difference of 2 with 5 is = 3
+        Absolute difference of 5 with 5 is = 0
+        Absolute difference of 3 with 5 is = 2
+        Absolute difference of 0 with 5 is = 5
+        Greatest number is = 5
+        Smallest number is = 0
+         */
+
+        //made a modification. I want to test declaring and assigning my variable inside the fori loop.
+        // I have been unsure of the outcome versus declaring/assigning before the loop
+        for (int j = 1; j <= 4; j++) {
+            int nn = (int)(Math.random()*11);
+            System.out.println("Number "+j+" = "+nn);
+            System.out.println("Absolute difference of "+nn+" with 5 is = "+Math.abs(nn-5));
+
+        }
+
+
 
         System.out.println("\nTASK-2");
         int num1 = (int) (Math.random() * 101 - 50), num2 = (int) (Math.random() * 101 - 50),
@@ -54,6 +86,48 @@ public class Homework07 {
 //        else System.out.println("There is at least one zero among those numbers is = false");
         System.out.println("There is at least one zero among those numbers is = " +
                 (num1 == 0 || num2 == 0 || num3 == 0 || num4 == 0 || num5 == 0 || num6 == 0 || num7 == 0 || num8 == 0));
+
+        System.out.println("\n---------TASK-2 April-15 2.5 months in--------\n");
+
+        /*
+        It is already pretty simplified. just added a few loops
+        
+        Write a program that generates 8 random int numbers between -50 and 50 (-50 and 50 are included)
+        -Store numbers in proper variables and print them first
+        -Find greatest and print the result with a proper message
+        -Find smallest and print the result with a proper message
+        -Find average of all 8 numbers and print result with a proper message
+        -Find the absolute difference between smallest and greatest and print result with a proper message
+        -Print true if 3rd number is positive, false otherwise with a proper message
+        -Print true if 5th number is negative, false otherwise with a proper message
+        -Print true if any of the numbers is zero, false otherwise with a proper message
+        NOTE: Assume random numbers came as -10, 5, -37, 13, 50, -39, 17, 3 respectively.
+        NOTE: Your result will be different based on the random numbers you will get.
+         */
+        int a = (int)(Math.random()*101-50), b = (int)(Math.random()*101-50), c = (int)(Math.random()*101-50), d = (int)(Math.random()*101-50),
+                e = (int)(Math.random()*101-50), f = (int)(Math.random()*101-50), g = (int)(Math.random()*101-50), h = (int)(Math.random()*101-50);
+        int[] numbers = {a,b,c,d,e,f,g,h};
+        int max = Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(a,b),c),d),e),f),g),h);
+        int min = Math.min(Math.min(Math.min(Math.min(Math.min(Math.min(Math.min(a,b),c),d),e),f),g),h);
+
+        for (int j = 1; j < numbers.length; j++) {
+            System.out.println("Number "+i+" = "+numbers[j]);
+        }
+        System.out.println("Greatest number is = "+max);
+        System.out.println("Smallest number is = "+min);
+        System.out.println("Average of 8 numbers is = "+(a+b+c+d+e+f+g+h)/8);
+        System.out.println("Absolute difference between smallest and greatest is = "+Math.abs(max-min));
+        System.out.println("3rd number is positive = "+(c>0));
+        System.out.println("5th number is negative = "+(e<0));
+
+        boolean w = false;
+        for (int number : numbers) {
+            if (number == 0) {
+                w = true;
+                break;
+            }
+        }
+        System.out.println("There is at least one zero among the numbers is = "+w);
 
         System.out.println("\nTASK-3");
         Scanner inputSeven = new Scanner(System.in);

@@ -2,7 +2,7 @@ package homeworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
+
 
 public class Homework16 {
 
@@ -125,7 +125,7 @@ public class Homework16 {
     public static void main(String[] args) {
 
         //Test TASK-1
-        System.out.println(countWords("hjhk jhkj"));
+        System.out.println(countWords("hello you"));
 
         //Test TASK-2
         System.out.println(countA("QA stands for Quality Assurance"));
@@ -163,7 +163,7 @@ public class Homework16 {
         System.out.println(add(a, b));
 
         //Test TASK-8
-        int[] numbers1 = {10, -13, 5, 10, 8, 11, 70, 15, 57};
+        int[] numbers1 = {10, -13, 5, 10, 8, 1, 70, 15, 57};
         System.out.println(findClosestTo10(numbers1));
 
 
