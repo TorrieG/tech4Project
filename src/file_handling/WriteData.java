@@ -1,6 +1,7 @@
 package file_handling;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class WriteData {
@@ -14,7 +15,18 @@ public class WriteData {
 
             Thread.sleep(5000);
 
-            System.out.println("hello".charAt(22));
+            //Write some ifo to the file
+            FileWriter file = new FileWriter("studentList.txt");
+            file.write("Abe\n");
+            file.write("Vita\n");
+            file.write("Torrie\n");
+            file.write("Taylor\n");
+            file.write("Kanari");
+            file.close(); // save
+
+            Thread.sleep(5000);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
