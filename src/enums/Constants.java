@@ -34,6 +34,7 @@ public class Constants {
         DECEMBER
     }
     public enum Frequencies{
+        HOURLY,
         DAILY,
         WEEKLY,
         BIWEEKLY,
