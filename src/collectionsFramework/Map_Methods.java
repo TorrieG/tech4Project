@@ -1,9 +1,6 @@
 package collectionsFramework;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Map_Methods {
     public static void main(String[] args) {
@@ -13,6 +10,8 @@ public class Map_Methods {
         favorites.put("City", "Chicago");
         favorites.put("Car", "Lexus");
         favorites.put("Pet", "Turtle");
+        favorites.put("Town", favorites.get("City"));
+
 
         // Keys: Day, Color, City, Car, Pet
         // Values: Friday, Black, Chicago, Lexus, Turtle
