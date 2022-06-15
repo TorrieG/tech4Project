@@ -58,6 +58,16 @@ public class Homework21 {
         }
         return String.valueOf(sum);
     }
+    /**
+     * TASK-3 REGEX
+     */
+    public static int findSumNumbersRegex(String s){
+        int sum = 0;
+        s = "0" + s;
+
+        for (String num : s.trim().split("[^0-9]+")) sum += Integer.parseInt(num);
+        return sum;
+    }
 
 
     /**
@@ -68,7 +78,6 @@ public class Homework21 {
      *
      * NOTE: If there are no numbers represented in the String, return 0.
      */
-
     public static int findBiggestNumber(String string){
         int biggestNumber = 0;
         int tempNumber;
@@ -116,12 +125,14 @@ public class Homework21 {
     }
 
 
+
     public static void main(String[] args) {
-        fizzBuzz1(18);
-        System.out.println(fizzBuzz2(1));
-        System.out.println(findSumNumbers("a100b4c 6#"));
-        System.out.println(findBiggestNumber("a100b4c 600#"));
-        System.out.println(countSequenceOfCharacters("abbcca"));
+//        fizzBuzz1(18);
+//        System.out.println(fizzBuzz2(1));
+//        System.out.println(findSumNumbers("a100b4c 6#"));
+//        System.out.println(findBiggestNumber("a100b4c 600#"));
+//        System.out.println(countSequenceOfCharacters("abbcca"));
+//        System.out.println(findSumNumbersRegex("a100b4c 6#"));
     }
 
 }
