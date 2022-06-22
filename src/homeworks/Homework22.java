@@ -1,6 +1,7 @@
 package homeworks;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Homework22 {
 
@@ -52,21 +53,15 @@ public class Homework22 {
      */
 
     public static int[] findUniques(int[] array1, int[] array2) {
-
-        // remove duplicates in each original array
         LinkedHashSet<Integer> temp1 = new LinkedHashSet<>();
         LinkedHashSet<Integer> temp2 = new LinkedHashSet<>();
-
         for (int i : array1) temp1.add(i);
         for (int j : array2) temp2.add(j);
 
-        // combine both arrays together without the duplicates from each
         List<Integer> combinedArrayList = new ArrayList<>(temp1);
         combinedArrayList.addAll(temp2);
 
-        // add the dupes to a new arraylist
         List<Integer> dupesArrayList = new ArrayList<>();
-
         for (int i = 0; i < combinedArrayList.size() - 1; i++) {
             for (int j = i + 1; j < combinedArrayList.size(); j++) {
                 if (Objects.equals(combinedArrayList.get(i), combinedArrayList.get(j))) {
@@ -75,15 +70,33 @@ public class Homework22 {
                 }
             }
         }
-        // remove the dupes arraylist from the combined arraylist
         combinedArrayList.removeAll(dupesArrayList);
-
-        // convert the combined arraylist without dupes to an int array
         int[] answer = new int[combinedArrayList.size()];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = combinedArrayList.get(i);
-        }
+        for (int i = 0; i < answer.length; i++) answer[i] = combinedArrayList.get(i);
         return answer;
+    }
+
+    // ------------------👾 Task 3 👾------------------\\
+
+    public static int[] findUniquesTaylorsWay(int[] a, int[] b){
+        if(a.length == 0 || b.length == 0) return new int[0];
+        List<Integer> g = Arrays.stream(a).boxed().collect(Collectors.toList());
+        List<Integer> f = Arrays.stream(b).boxed().collect(Collectors.toList());
+        ArrayList<Integer> k = new ArrayList<>();
+
+        for (Integer num : g) {
+            if (!f.contains(num) & !k.contains(num)) k.add((num));
+        }
+        for (Integer num : f) {
+            if (!g.contains(num) && !k.contains(num)) k.add((num));
+        }
+        int[] u = new int[k.size()];
+
+        int i = 0;
+        for (Integer o : k) {
+            u[i++] = o;
+        }
+        return u;
     }
 
     /**
@@ -132,6 +145,7 @@ public class Homework22 {
         System.out.println("\nTASK-1\n" + Arrays.toString(fibonacciSeries1(7)));
         System.out.println("\nTASK-2\n" + fibonacciSeries2(8));
         System.out.println("\nTASK-3\n" + Arrays.toString(findUniques(new int[]{1, 2, 3, 4}, new int[]{3, 4, 5, 5})));
+        System.out.println("\nTASK-3 Taylor's Way\n" + Arrays.toString(findUniquesTaylorsWay(new int[]{1, 2, 3, 4}, new int[]{3, 4, 5, 5})));
         System.out.println("\nTASK-4\n" + isPowerOf3(81));
         System.out.println("\nTASK-5\n" + firstDuplicate(new int[]{1, 2, 3, 3, 4, 1}));
     }

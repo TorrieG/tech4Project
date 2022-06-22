@@ -132,7 +132,7 @@ public class Homework21 {
 //        System.out.println(findSumNumbers("a100b4c 6#"));
 //        System.out.println(findBiggestNumber("a100b4c 600#"));
 //        System.out.println(countSequenceOfCharacters("abbcca"));
-//        System.out.println(findSumNumbersRegex("a100b4c 6#"));
+        System.out.println(findSumNumbersRegex("a100b4c 6#"));
     }
 
 }
